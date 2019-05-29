@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "building the csi plugin"
+
+apt-get update
+apt-get install -y wget tar
+
+wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.12.5.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+#export GOPATH=$PWD/go
+#mkdir -p $GOPATH/src/github.com/opensds
+#echo $(ls -l)
+#cp -R nbp $GOPATH/src/github.com/opensds
+
+echo $(cat /etc/issue)
+echo $(which go)
+echo $(go version)
+
+go build -ldflags '-w -s' -o ./csi.server.opensds ./
