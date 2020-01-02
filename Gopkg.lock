@@ -45,7 +45,7 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:22db66c6af48fe0e93e971d796cad565ee9e0039646bd59bc8e29b7a7bd2d24e"
+  digest = "1:511b0e48adf05b1d17e32af772a1e0a047b909f51d401a572caae26fcf0b2950"
   name = "github.com/coreos/etcd"
   packages = [
     "auth/authpb",
@@ -53,6 +53,8 @@
     "etcdserver/api/v3rpc/rpctypes",
     "etcdserver/etcdserverpb",
     "mvcc/mvccpb",
+    "pkg/tlsutil",
+    "pkg/transport",
     "pkg/types",
   ]
   pruneopts = "NUT"
@@ -77,6 +79,14 @@
   pruneopts = "NUT"
   revision = "48294d928ced5dd9b378f7fd7c6f5da3ff3f2c89"
   version = "v2.6.2"
+
+[[projects]]
+  digest = "1:bf93a23ade63500c0f209426736ee3b98011cd0cf6329c81521523a457106367"
+  name = "github.com/go-ini/ini"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "94291fffe2b14f4632ec0e67c1bfecfc1287a168"
+  version = "v1.51.1"
 
 [[projects]]
   digest = "1:cd4f86461732066e277335465962660cbf02999e18d5bbb5e9285eac4608b970"
@@ -276,7 +286,7 @@
 
 [[projects]]
   branch = "mizar"
-  digest = "1:c1c7a2ade7a5baf2e29586a2ec5d2b2d8052e651db58678347e77adada0c97ca"
+  digest = "1:c9cab8a3ce6c979699f8270781713b6a126c03f3d52297e6d6b55098578490bb"
   name = "github.com/opensds/opensds"
   packages = [
     "client",
@@ -293,6 +303,7 @@
     "pkg/model",
     "pkg/model/proto",
     "pkg/utils",
+    "pkg/utils/config",
     "pkg/utils/constants",
     "pkg/utils/logs",
     "pkg/utils/pwd",
@@ -300,7 +311,7 @@
     "testutils/collection",
   ]
   pruneopts = "NUT"
-  revision = "c1e19f9fe64f9d239190ba8cf71f65c31583f270"
+  revision = "c94be95b46d9d32f3d21ae3b57582e659a0b67c3"
   source = "github.com/wisererik/opensds"
 
 [[projects]]
