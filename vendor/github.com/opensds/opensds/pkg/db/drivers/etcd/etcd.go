@@ -30,6 +30,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/opensds/opensds/pkg/utils/config"
+
 	log "github.com/golang/glog"
 	c "github.com/opensds/opensds/pkg/context"
 	"github.com/opensds/opensds/pkg/model"
@@ -80,9 +82,9 @@ func AuthorizeProjectContext(ctx *c.Context, tenantId string) bool {
 }
 
 // NewClient
-func NewClient(edps []string) *Client {
+func NewClient(etcd *config.Database) *Client {
 	return &Client{
-		clientInterface: Init(edps),
+		clientInterface: Init(etcd),
 	}
 }
 
@@ -1426,8 +1428,6 @@ func (c *Client) CreateVolume(ctx *c.Context, vol *model.VolumeSpec) (*model.Vol
 	}
 
 	vol.TenantId = ctx.TenantId
-	// Set attached as false when creating volume
-	vol.Attached = new(bool)
 	volBody, err := json.Marshal(vol)
 	if err != nil {
 		return nil, err
@@ -1684,10 +1684,6 @@ func (c *Client) UpdateVolume(ctx *c.Context, vol *model.VolumeSpec) (*model.Vol
 	}
 	if vol.GroupId != "" {
 		result.GroupId = vol.GroupId
-	}
-
-	if vol.Attached != nil {
-		result.Attached = vol.Attached
 	}
 
 	// Set update time
