@@ -22,11 +22,11 @@ VERSION ?= $(shell git describe --exact-match 2> /dev/null || \
 		 --always --dirty --abbrev=8)
 BUILD_TGT := opensds-sushi-$(VERSION)-linux-amd64
 #.PHONY: all build prebuild csi.block.opensds csi.file.opensds flexvolume.server.opensds service-broker cindercompatibleapi docker clean
-.PHONY: all build prebuild csi.block.opensds csi.file.opensds cindercompatibleapi docker clean
+.PHONY: all build prebuild csi.block.opensds cindercompatibleapi docker clean
 
 all: build
 #build: csi.block.opensds csi.file.opensds flexvolume.server.opensds service-broker cindercompatibleapi
-build: csi.block.opensds csi.file.opensds cindercompatibleapi
+build: csi.block.opensds cindercompatibleapi
 
 prebuild:
 	mkdir -p  $(BUILD_DIR)
@@ -58,10 +58,10 @@ cindercompatibleapi: prebuild
 
 docker: build
 	cp $(BUILD_DIR)/csi.block.opensds ./csi/
-	cp $(BUILD_DIR)/csi.file.opensds ./csi/
+#	cp $(BUILD_DIR)/csi.file.opensds ./csi/
 #	cp $(BUILD_DIR)/service-broker ./service-broker/cmd/service-broker
 	docker build -f csi/cmd/block/Dockerfile -t opensdsio/csiplugin-block:$(IMAGE_TAG) csi
-	docker build -f csi/cmd/file/Dockerfile -t opensdsio/csiplugin-file:$(IMAGE_TAG) csi
+#	docker build -f csi/cmd/file/Dockerfile -t opensdsio/csiplugin-file:$(IMAGE_TAG) csi
 #	docker build service-broker/cmd/service-broker -t opensdsio/service-broker:$(IMAGE_TAG)
 
 goimports:
