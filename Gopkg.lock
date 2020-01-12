@@ -37,12 +37,12 @@
   revision = "3a771d992973f24aa725d07868b467d1ddfceafb"
 
 [[projects]]
-  digest = "1:94ffc0947c337d618b6ff5ed9abaddc1217b090c1b3a1ae4739b35b7b25851d5"
+  digest = "1:06e72a3140381f370345af6ed8986a22f4e6e7171fe317407c1d4675fe24e8d9"
   name = "github.com/container-storage-interface/spec"
   packages = ["lib/go/csi"]
   pruneopts = "NUT"
-  revision = "ed0bb0e1557548aa028307f48728767cfe8f6345"
-  version = "v1.0.0"
+  revision = "314ac542302938640c59b6fb501c635f27015326"
+  version = "v1.2.0"
 
 [[projects]]
   digest = "1:511b0e48adf05b1d17e32af772a1e0a047b909f51d401a572caae26fcf0b2950"
@@ -286,7 +286,7 @@
 
 [[projects]]
   branch = "mizar"
-  digest = "1:c9cab8a3ce6c979699f8270781713b6a126c03f3d52297e6d6b55098578490bb"
+  digest = "1:dab5e03f178bcc3e80af80a602fddec4bdad9d3f7b2f6c4f052ea85237220902"
   name = "github.com/opensds/opensds"
   packages = [
     "client",
@@ -311,7 +311,7 @@
     "testutils/collection",
   ]
   pruneopts = "NUT"
-  revision = "c94be95b46d9d32f3d21ae3b57582e659a0b67c3"
+  revision = "41239dc3885be2a3b72f95917f5bb6b22b41e95d"
   source = "github.com/wisererik/opensds"
 
 [[projects]]
