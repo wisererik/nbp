@@ -286,7 +286,7 @@
 
 [[projects]]
   branch = "mizar"
-  digest = "1:dab5e03f178bcc3e80af80a602fddec4bdad9d3f7b2f6c4f052ea85237220902"
+  digest = "1:3eeccc906e4f18789afe8cd7c6fb24e5e1987ef74454d237d95bc080f30e4165"
   name = "github.com/opensds/opensds"
   packages = [
     "client",
@@ -311,7 +311,7 @@
     "testutils/collection",
   ]
   pruneopts = "NUT"
-  revision = "41239dc3885be2a3b72f95917f5bb6b22b41e95d"
+  revision = "45eb209a0bfda56fe1aada5ba115a10adb0e57a3"
   source = "github.com/wisererik/opensds"
 
 [[projects]]
